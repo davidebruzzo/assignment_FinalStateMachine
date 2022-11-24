@@ -93,6 +93,7 @@ class MyHelper:
 
         # Initializing with buffered manipulation and reasoning
         client.utils.load_ref_from_file(path + "topological_map.owl", "http://bnc/exp-rob-lab/2022-23", True, "PELLET", True, False)
+        
 
         client.utils.mount_on_ref()
         client.utils.set_log_to_terminal(True)
