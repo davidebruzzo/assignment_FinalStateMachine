@@ -17,21 +17,56 @@ This FSM is made with [Smach](http://wiki.ros.org/smach) and bases its behaviour
 
 The Robot (*robot1*) can use the ontology to get informations about the environment. It has also a controller and a planner for simulating its moving in the environment and a battery, to simulate discharging and recharging.
 
+
+___
 ### Scenario 
 
 The scenario involves a robot deployed in a indoor environment for surveillance purposes.
 
 The robot’s objective is to visit the different locations and stay there for some times.
 
+
+___
 ### The Environment
 
 The environment is assumed to be a 2D environment composed of:
 - **Rooms**: locations with one door; 
 - **Corridors**: location with at least two doors.
 
-The specific environment required by the assignment is made of *4 rooms* and *3 corridors* as here below: 
+The specific environment required by the assignment is made of *4 rooms* and *3 corridors* as below: 
 
 
 <p align="center">
-<img src="https://github.com/davidebruzzo/ResTrack/blob/main/Flowchart.drawio.png" width="900" />
+<img src="https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/images/env.png" width="300" />
 <p>
+
+Where:
+- E is the starting location and the charging room;
+- R1, R2, R3 and R4 are the rooms;
+- C1 and C2 are the corridors.
+
+
+___
+ ### The Phases
+ 
+- Phase 1:
+  - The robot start in the E location;
+  - It waits here waits until it receives the information to build the topological map (with the relations between corridors and rooms, adding doors)
+
+- Phase 2:
+  - The robot moves in a new location;
+  - It waits for some times before to visit another location. This behavior is repeated in a infinite loop and simulated with planning and controlling;
+  - When the robot’s battery is low, it goes in the E location and wait for recharging.
+  
+  
+___
+  ### Surveillance policy
+  The robot should follow this surveillance policy:
+  - It should mainly stay on corridors;
+  - If a reachable room has not been visited for some times it should visit it.
+  
+  The policy I implemented for surveillance is based on randomness in order to make robot more random-based. In fact the node [my_helper](https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/scripts/my_helper.py) in the function ```DecideUrgentReachable()``` where it is obtained a list of room *reachable* and a list of room *urgent*, then by seeing if there are some of them that belongs to both lists. Then it picks a random item belonging to both lists.
+  
+  ___
+ ## Software architecture
+  
