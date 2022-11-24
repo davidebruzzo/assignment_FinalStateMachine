@@ -1,0 +1,48 @@
+\hypertarget{planner_8py}{}\doxysection{scripts/planner.py File Reference}
+\label{planner_8py}\index{scripts/planner.py@{scripts/planner.py}}
+
+
+This file simulates the behaviour of the robot while planning to a location.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classplanner_1_1_planing_action}{planner.\+Planing\+Action}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{planner_8py_a3e84a9e16b3be4f93cc7dc469870ef33}\label{planner_8py_a3e84a9e16b3be4f93cc7dc469870ef33}} 
+string {\bfseries planner.\+L\+O\+G\+\_\+\+T\+AG} = \textquotesingle{}N\+O\+D\+E\+\_\+\+P\+L\+A\+N\+N\+ER\textquotesingle{}
+\item 
+\mbox{\Hypertarget{planner_8py_ab554f56ade44b42d452d34ab0f92591d}\label{planner_8py_ab554f56ade44b42d452d34ab0f92591d}} 
+{\bfseries planner.\+log\+\_\+level}
+\item 
+\mbox{\Hypertarget{planner_8py_aaba81fa6983b3c1cd69468b3659420e6}\label{planner_8py_aaba81fa6983b3c1cd69468b3659420e6}} 
+{\bfseries planner.\+server} = \mbox{\hyperlink{class_planing_action}{Planing\+Action}}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file simulates the behaviour of the robot while planning to a location. 
+
+\begin{DoxyAuthor}{Author}
+Luca Buoncompagni, Davide Bruzzo 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+18/11/2022
+\end{DoxyDate}
+Subscribes to\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Publishes to\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Service\+: ~\newline
+ state/get\+\_\+pose
+
+An action server to simulate motion planning. Given a target position, it retrieve the current robot position from the {\ttfamily my\+\_\+helper} node, and return a plan as a set of via points. 

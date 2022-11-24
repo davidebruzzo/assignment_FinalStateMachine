@@ -1,0 +1,34 @@
+<launch>
+    <!-- Run the architecture's component and test it based on random-based stimulus. -->
+
+    <rosparam param="state/initial_pose"> [ 0.0,  0.0] </rosparam>
+
+    <node pkg = "exp1_assignment"
+          type = "assignment_FSM.py"
+          name = "assignment_FSM"
+          launch-prefix="xterm -e"
+          output = "screen"
+    > </node>
+
+    <node pkg = "exp1_assignment"
+          type = "battery.py"
+          name = "battery"
+          launch-prefix="xterm -e"
+          output = "screen"
+    > </node>
+
+    <node pkg = "exp1_assignment"
+          type = "controller.py"
+          name = "controller"
+          launch-prefix="xterm -e"
+          output = "screen"
+    > </node>
+
+    <node pkg = "exp1_assignment"
+          type = "planner.py"
+          name = "planner"
+          launch-prefix="xterm -e"
+          output = "screen"
+    > </node>
+
+</launch>
