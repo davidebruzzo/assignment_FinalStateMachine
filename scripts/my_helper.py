@@ -195,6 +195,7 @@ class MyHelper:
             client.utils.apply_buffered_changes()
             # client.utils.sync_buffered_reasoner()
 
+
             # SAVE AND EXIT
 
             client.utils.save_ref_with_inferences('/root/ros_ws/src/exp1_assignment/topological_map/my_topological_map.owl')
