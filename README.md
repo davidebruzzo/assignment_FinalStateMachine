@@ -2,7 +2,7 @@ First Assignment, FSM - Experimental Robotics
 ================================
 **A ROS-based assignment for the Experimental Robotics Laboratory course held at the University of Genoa.**
 
-Fully code documentation can be found [here](https://davidebruzzo.github.io/assignment_FinalStateMachine/).
+Code documentation can be found [here](https://davidebruzzo.github.io/assignment_FinalStateMachine/).
 
 Author: [*Davide Bruzzo*](mailto:davide.brzo@gmail.com?subject=[GitHub]%20Source%20Han%20Sans)
 
