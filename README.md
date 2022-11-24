@@ -112,5 +112,6 @@ and the result will be this:
    <p align="center">
   <img src="https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/images/temporal.drawio.png" width="500" />
   <p>
-   It shows all the nodes of the architecture, in particular it's colored in yellow the battery node. This is done on purpose because this node is always active and runs on a separate thread. 
-   It publishes a boolean value when the robot has *low battery*, it returns to FSM to recharge the robot. The other nodes are active aswell but they are based on the interaction with FSM that makes them do something.
+  
+   It shows all the nodes of the architecture, in particular it's colored in yellow the battery node. This is done on purpose because this node is always active and    runs on a separate thread. 
+   It publishes a boolean value when the robot has *low battery*, it returns to FSM to recharge the robot. The other nodes are active aswell but they are based on    the interaction with FSM that makes them do something.
