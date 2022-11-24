@@ -93,7 +93,6 @@ class MyHelper:
 
         # Initializing with buffered manipulation and reasoning
         client.utils.load_ref_from_file(path + "topological_map.owl", "http://bnc/exp-rob-lab/2022-23", True, "PELLET", True, False)
-        
 
         client.utils.mount_on_ref()
         client.utils.set_log_to_terminal(True)
@@ -198,7 +197,7 @@ class MyHelper:
 
             # SAVE AND EXIT
 
-            client.utils.save_ref_with_inferences('/root/ros_ws/src/exp1_assignment/topological_map/my_topological_map.owl')
+            client.utils.save_ref_with_inferences('/root/ros_ws/src/exp1_assignment/topological_map' + "my_topological_map.owl")
 
             client.call('DISJOINT', 'IND', 'CLASS', ["R1","R2","R3","R4", "C1","C2", "D1", "D2", "D3", "D4", "D5", "D5", "D7"])
 
