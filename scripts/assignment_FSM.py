@@ -37,10 +37,6 @@ from my_helper import MyHelper
 # Import used messages defined within the ROS architecture.
 from arch_skeleton.msg import Gesture, Point, Speech, PlanAction, PlanGoal, ControlAction, ControlGoal
 
-global battery
-battery = 0
-
-
 client = ArmorClient("my_client","ontology2")
 
 
