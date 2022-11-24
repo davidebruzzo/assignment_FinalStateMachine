@@ -4,7 +4,7 @@ First Assignment, FSM - Experimental Robotics
 
 *Code documentation can be found [here](https://davidebruzzo.github.io/assignment_FiniteStateMachine/).*
 
-Author: [*Davide Bruzzo*](mailto:davide.brzo@gmail.com?subject=[GitHub]%20Source%20Han%20Sans)
+Author: [*Davide Bruzzo (S4649449)*](mailto:davide.brzo@gmail.com?subject=[GitHub]%20Source%20Han%20Sans)
 
 ****************************
 ## Introduction
@@ -70,3 +70,32 @@ ___
   ___
  ## Software architecture
   
+  Down below the component diagram: 
+  <p align="center">
+  <img src="https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/images/uml.drawio (1).png" width="500" />
+  <p>
+
+From this diagram is quite visible the centrality of the **Finite State Machine** node implemented in the [assignment_FSM.py](https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/scripts/assignment_FSM.py). This node is vital to simulate the robot's behaviour. There are also other nodes that simulates some external robot's behaviours, such as controlling and planning robot's path to the rooms.  
+
+The [battery.py](https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/scripts/battery.py) node simulates the discharging and the recharging of the robot's battery with ```Bool.msg``` when the robot has low battery is sent to the state machine.
+
+
+The software that implements the *FSM* is made of 4 states:
+- WaitForOntology;
+- Recharging;
+- Plan_To_Urgent;
+- Visit_Room.
+
+ <p align="center">
+  <img src="https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/images/statemachine.jpg" width="600" />
+  <p>
+  
+  The yellow arrows represent the recursive iteration, they are not written in order to simplify the graph.
+  
+  The equivalent graph can be obtained by writing these commands on the bash:
+  
+  ```bash
+$ rosrun smach_viewer smach_viewer.py
+```
+and the result will be this:
+
