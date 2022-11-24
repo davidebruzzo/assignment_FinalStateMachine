@@ -99,3 +99,17 @@ $ rosrun smach_viewer smach_viewer.py
 ```
 and the result will be this:
 
+<p align="center">
+  <img src="https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/images/smach.png" width="300" />
+  <p>
+   
+   Where you can see aswell the recursive ones.
+   
+   ### Temporal diagram
+   
+   Here it is the temporal diagram:
+   
+   <p align="center">
+  <img src="https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/images/temporal.drawio.png" width="500" />
+  <p>
+   It shows all the nodes of the architecture, in particular it's colored in yellow the battery node. This is done on purpose because this node is always active and runs on a separate thread. It publishes a boolean value when the robot has *low_battery*
