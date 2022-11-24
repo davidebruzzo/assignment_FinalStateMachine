@@ -197,7 +197,7 @@ class MyHelper:
 
             # SAVE AND EXIT
 
-            client.utils.save_ref_with_inferences('/root/ros_ws/src/exp1_assignment/topological_map' + "my_topological_map.owl")
+            client.utils.save_ref_with_inferences('/root/ros_ws/src/exp1_assignment/topological_map/my_topological_map.owl')
 
             client.call('DISJOINT', 'IND', 'CLASS', ["R1","R2","R3","R4", "C1","C2", "D1", "D2", "D3", "D4", "D5", "D5", "D7"])
 
