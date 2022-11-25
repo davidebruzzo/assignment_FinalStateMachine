@@ -194,7 +194,7 @@ The revised plan is supplied as `feedback` when a new `via_points` is generated.
   <img src="https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/images/controller.png" width="600" />
   <p>
 	  
-This node implements an action server named ```motion/controller```. The ```SimpleActionServer``` class, which is based on the *Control* action message, enables this. This action server requires a plan given as a list of via_points by the planner node. This component iterates for each intended `via_point` and waits to simulate the time it would take to move the robot to that position given the plan. The waiting period can be adjusted using the **[PARAM_PLANNER_TIME](https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/utilities/exp1_assignment/architecture_name_mapper.py)**.
+This node implements an action server named ```motion/controller```. The ```SimpleActionServer``` class, which is based on the *Control* action message, enables this. This action server requires a plan given as a list of via_points by the planner node. This component iterates for each intended `via_point` and waits to simulate the time it would take to move the robot to that position given the plan. The waiting period can be adjusted using the **[PARAM_CONTROLLER_TIME](https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/utilities/exp1_assignment/architecture_name_mapper.py)**.
 	  
 A feedback is given each time a via point is reached. The action service delivers a result by propagating the current robot location once the last via point has been reached.
 	  
@@ -226,4 +226,27 @@ The package is organized by the architecture name mapper module, which maintains
 ___
 ## Installation and running procedure 
 	  
-	  
+For installing this repository:
+  - ```Git clone``` into your ROS workspace.
+  - Run ```chmod +x``` for every file inside the [script](https://github.com/davidebruzzo/assignment_FiniteStateMachine/tree/main/scripts) folder.
+  - Run ```cpp catkin_make``` to build the workspace.
+    
+Then it's also needed the ```xterm``` package, by typing this in shell:
+```bash 
+  sudo apt-get update
+  sudo apt-get -y install xterm
+```
+Now you can use the following commands to launch the simulation:
+  - On a terminal:
+    ```bash 
+      roscore &
+      rosrun armor execute it.emarolab.armor.ARMORMainService
+    ```
+    
+   - On another terminal:
+    ```bash 
+      roslaunch exp1_assignment launch.launch
+    ```
+    ___
+    ## Video
+    
