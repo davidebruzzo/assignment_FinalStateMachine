@@ -207,16 +207,16 @@ The ```battery``` node simulates the cycles of discharging and recharging of the
 In the class ```MyHelper``` are defined all the functions that the FSM uses just by calling them and passing the right parameters. This class has been developed in order to make the code and the structure more modular and to make the execute functions lighter. 
 Here a list of the most important of them and a brief explanation:
   - ```LoadOntology()```: This function performs all the clients methods in order to create the ontology and adding all the rooms and corridors. This function is called in LoadOntology state.
-	- ```Reasoning()```:  This function performs the reasoning on the Ontology by calling the two utils methods of the client.
-	- ```UpdateNowRobot()```: This function retreives the value of the timestamp dataprop now and substitutes it with the updated one by calling the method on the client.
-	- ```UpdateVisitedRoom()```: This function retreives the value of the timestamp dataprop visitedAt and substitutes it with the updated one by calling the method on the client.
-  - ```GetUrgentRooms()```: This function takes the urgent room and returns the list of all of them.
-	- ```GetReachableRooms()```: This function takes the reachable room and returns the list of all of them.
-	- ```DecideUrgentReachable()```: This function takes the reachable and urgent list of room and returns a random one which is both urgent both reachable.
-	- ```MoveRobot()```: This function takes the room in which it is the robot and moves it into the new one.
-	- ```VisitingRoom()```: This function simulates the robot visiting the room for 5 seconds checking at avery iteration the battery status.
-	- ```PlanningPath()```: This function calls the client to send the goal to the planning server.
-	- ```MovingAlongPath()```: This function calls the client to control the path toward the goal on the controlling server.
+- ```Reasoning()```:  This function performs the reasoning on the Ontology by calling the two utils methods of the client.
+- ```UpdateNowRobot()```: This function retreives the value of the timestamp dataprop now and substitutes it with the updated one by calling the method on the client.
+- ```UpdateVisitedRoom()```: This function retreives the value of the timestamp dataprop visitedAt and substitutes it with the updated one by calling the method on the client.
+- ```GetUrgentRooms()```: This function takes the urgent room and returns the list of all of them.
+- ```GetReachableRooms()```: This function takes the reachable room and returns the list of all of them.
+- ```DecideUrgentReachable()```: This function takes the reachable and urgent list of room and returns a random one which is both urgent both reachable.
+- ```MoveRobot()```: This function takes the room in which it is the robot and moves it into the new one.
+- ```VisitingRoom()```: This function simulates the robot visiting the room for 5 seconds checking at avery iteration the battery status.
+- ```PlanningPath()```: This function calls the client to send the goal to the planning server.
+- ```MovingAlongPath()```: This function calls the client to control the path toward the goal on the controlling server.
 	  
 	  
 ### The ```architecture_name_mapper``` file
