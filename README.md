@@ -264,16 +264,22 @@ ___
 ## Working hypothesis and system features
 	  
 The Recharging Room (E), is where the robot starts. From here, it moves arbitrarily, which means it first determines its current location and then the other ones that are reachable. Then it takes the urgent ones and makes a random selection from a list of both reachable and urgent.
-The robot is also presumptively autonomous for random amount of time, from 15 to 40 seconds before requiring recharging. It is anticipated that the robot must arrive at the correct position before being recharged. While a robot is in a corridor and the battery low arrives, it returns directly to E. But if the battery low signal arrives when the robot is visiting a room, it stops visiting it and plan its path to reach the recharging room. Obviously it do not consider the room visited. This is done to simulate the behaviour of the real robot since it cannot skip directly the corridors in between.
+The robot is also presumptively autonomous for random amount of time, from 15 to 40 seconds before requiring recharging. It is anticipated that the robot must arrive at the correct position before being recharged. While a robot is in a corridor and the battery low arrives, it returns directly to E. But if the battery low signal arrives when the robot is visiting a room, it stops visiting it and plan its path to reach the recharging room. 
+Obviously it do not consider the room visited. This is done to simulate the behaviour of the real robot since it cannot skip directly the corridors in between.
+
 The interaction of the battery is also taken into account into the *planning* and *controlling* phases.
+
 When robot is in E it randomly waits again in the range of seconds to simulate the recharging.
 
 ___
 ## System limitations
-The first limitation that I found was due to the dimension of the map, since it has only 2 corridors when the rooms are not urgent the robots could ping-pong between the two corridor. Another one can be the urgency threshold that is set by 7 seconds, this makes propably robot always visit only the two room on right or left when enter in the first one of these two. This is caused in combination of the visiting period which is of 5 seconds.
+The first limitation that I found was due to the dimension of the map, since it has only 2 corridors when the rooms are not urgent the robots could ping-pong between the two corridor. 
+
+Another one can be the urgency threshold that is set by 7 seconds, this makes propably robot always visit only the two room on right or left when enter in the first one of these two. This is caused in combination of the visiting period which is of 5 seconds.
 
 ___
 ## Improvements
 	  
 An improvement could be, if the robot had to calculate the course, it would have to do it by examining all potential routes and selecting the best one to prevent wasting time with unnecessary movements and battery power.
+
 Another one could be the implement of errors and fault management and also making the robot remember a route from each place to the charging room would be an enhancement that would prevent it from having to choose randomly to get to a destination in the event of a low charge and would therefore save time.
