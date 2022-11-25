@@ -248,6 +248,6 @@ Now you can use the following commands to launch the simulation:
     	 roslaunch exp1_assignment launch.launch
      ```
 	  
-    ___
-    ## Video
+___
+## Video
     
