@@ -179,6 +179,14 @@ This node also communicates with ```planner``` and ```controller``` as described
 <p align="center">
   <img src="https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/images/planner.png" width="600" />
   <p>
+	  
+This node implements an action server named ```motion/planner```. The ```SimpleActionServer``` class, which is based on the *Plan* action message, enables this. The goal must provide a starting and an ending point for this action server.
+This service prepares a variable number of waypoints to get to the destination position given the initial position. It just returns a plan in the form of a randomly generated list of *via_points*. 
+The **PARAM_PLANNER_POINTS**  variable, that is defined in [this](https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/utilities/exp1_assignment/architecture_name_mapper.py) file can be used to set The number of points in the plan. It should be a list `[min_n, max_n]`, where the number of points is a random value in the interval [`min_n`, `max_n`).
+
+To imitate computation, each via point is further delivered with a delay that can be adjusted using the **PARAM_PLANNER_TIME** the delay between the computation of the next via points. 
+It should be a list `[min_time, max_time]`, and the computation will last for a random number of seconds in such an interval.
+The revised plan is supplied as `feedback` when a new `via_points` is generated. The plan is presented as results once all of the `via_points` have been generated.
 	 
 ### The ```controller``` node
 	  
