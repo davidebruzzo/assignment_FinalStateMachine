@@ -249,9 +249,15 @@ Now you can use the following commands to launch the simulation:
      ```
 	  
 ___
-## Video
-    
+## Video   
 
 
 https://user-images.githubusercontent.com/62437632/204036485-fc2c240f-b2c6-45ae-b17e-6fa824166d6a.mp4
+	  
+In this video you can see the simulation of the FSM in particular the shell presented are divided as following:
+ - **Upper-left**: The *Assignment_FSM* node;
+ - **Lower-left**: The *battery* node;
+ - **Upper-right**: The *planner*;
+ - **Lower-right**: The *controller* node.
+	  
 
