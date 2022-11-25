@@ -245,8 +245,9 @@ Now you can use the following commands to launch the simulation:
     
    - On another terminal:
     ```bash 
-      roslaunch exp1_assignment launch.launch
+    	 roslaunch exp1_assignment launch.launch
     ```
+	  
     ___
     ## Video
     
