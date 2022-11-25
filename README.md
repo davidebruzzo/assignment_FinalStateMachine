@@ -68,8 +68,7 @@ ___
   The policy I implemented for surveillance is based on randomness in order to make robot more random-based. In fact the node [my_helper](https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/scripts/my_helper.py) in the function ```DecideUrgentReachable()``` obtains a list of room *reachable* and a list of room *urgent*, then by seeing if there are some of them that belongs to both lists it picks a random item belonging to both lists.
 	
 Below the essential algorithm
-```python
-	
+```python	
 urgReachable = list(set(listReachable).intersection(listUrgent))
 
         if(len(urgReachable) < 1):
@@ -80,7 +79,7 @@ urgReachable = list(set(listReachable).intersection(listUrgent))
             return random.choice(urgReachable) # I return a random urgent reachable room
 
 ```
-In fact if the new list made by the intersection of the two reachable and urgent is empty (lenght < 1) means that no rooms are urgent or the ones that are urgent aren't reachable.
+In fact, if the new list made by the intersection of the two reachable and urgent is empty (lenght < 1) means that no rooms are urgent or the ones that are urgent aren't reachable.
 So in this case I decided to make robot moving to a random reachable location, in order to make it moving. In the counter case my list of Urgent/Reachable has at least 1 item so I return a random room from that list.
   ___
  ## Software architecture
@@ -120,7 +119,7 @@ To link all the nodes and make them communicating each other have been used some
 - Message:
 	- ```Bool.msg```: published on the topic ```state/battery_low```, warn FSM when robot's battery low.
 ___
-### Software architecture
+### States diagram
 
 The software that implements the *FSM* is made of 4 states:
 - **WaitForOntology**;
@@ -157,3 +156,7 @@ and the result will be this:
   
    It shows all the nodes of the architecture, in particular it's colored in yellow the battery node. This is done on purpose because this node is always active and    runs on a separate thread. 
    It publishes a boolean value when the robot has *low battery*, it returns to FSM to recharge the robot. The other nodes are active aswell but they are based on    the interaction with FSM that makes them do something.
+
+	  
+## Software components
+
