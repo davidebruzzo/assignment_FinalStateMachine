@@ -66,7 +66,22 @@ ___
   - If a reachable room has not been visited for some times it should visit it.
   
   The policy I implemented for surveillance is based on randomness in order to make robot more random-based. In fact the node [my_helper](https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/scripts/my_helper.py) in the function ```DecideUrgentReachable()``` obtains a list of room *reachable* and a list of room *urgent*, then by seeing if there are some of them that belongs to both lists it picks a random item belonging to both lists.
-  
+	
+Below the essential algorithm
+```python
+	
+urgReachable = list(set(listReachable).intersection(listUrgent))
+
+        if(len(urgReachable) < 1):
+            # I can reach CORRIDORS or Rooms not urgent
+            return random.choice(listReach) # so I return a random reachable location
+        else:
+            # I obtained a list of both urgent and reachable rooms
+            return random.choice(urgReachable) # I return a random urgent reachable room
+
+```
+In fact if the new list made by the intersection of the two reachable and urgent is empty (lenght < 1) means that no rooms are urgent or the ones that are urgent aren't reachable.
+So in this case I decided to make robot moving to a random reachable location, in order to make it moving. In the counter case my list of Urgent/Reachable has at least 1 item so I return a random room from that list.
   ___
  ## Software architecture
   
