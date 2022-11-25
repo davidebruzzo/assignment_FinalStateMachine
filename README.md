@@ -41,9 +41,9 @@ The specific environment required by the assignment is made of *4 rooms* and *3 
 <p>
 
 Where:
-- E is the starting location and the charging room;
-- R1, R2, R3 and R4 are the rooms;
-- C1 and C2 are the corridors.
+- *E* is the starting location and the charging room;
+- *R1, R2, R3* and *R4* are the rooms;
+- *C1* and *C2* are the corridors.
 
 
 ___
@@ -77,14 +77,41 @@ ___
 
 From this diagram is quite visible the centrality of the **Finite State Machine** node implemented in the [assignment_FSM.py](https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/scripts/assignment_FSM.py). This node is vital to simulate the robot's behaviour. There are also other nodes that simulates some external robot's behaviours, such as controlling and planning robot's path to the rooms.  
 
-The [battery.py](https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/scripts/battery.py) node simulates the discharging and the recharging of the robot's battery with ```Bool.msg``` when the robot has low battery is sent to the state machine.
+The [battery.py](https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/scripts/battery.py) node simulates the discharging and the recharging of the robot's battery with ```Bool.msg``` taken by the ```std_msgs/Bool.msg``` file when the robot has low battery is sent to the state machine.
 
+In detail:
+- **planner**: it's an action server that simulates the planning of the path. It computes the path and gives the result through *Plan.action*, that is made of a set of points which compose the resulting plan.
+- **controller**: it's an action server that simulates the moving of the robot along the path. It uses the *Control.action* to give the result and the feedbacks updating the position of the robot passing the via_points.
+- **armor service**: it is used to do all the interactions with the ontology, this is made through queries done by the FSM.
+
+___
+### ROS messages and parameters
+
+To link all the nodes and make them communicating each other have been used some actions and messages:
+
+- Actions:
+	- ```Control.action``` --> The motion controlling interface:
+		- **Action Service**: 
+			- ```Goal```, *Point[] via_points*: the plan as a set of points to reach.
+			-  ```Result```, *Point reached_point*: the reached point when the plan has been followed.
+			- ```Feedback```, *Point reached_point*: the last `via_point` reached so far.
+			
+	- ```Plan.action``` --> The motion planning interface:
+		- **Action Server**: 
+			- ```Goal```, *Point target*: the point to be reached at the end of the plan.
+			- ```Result```, *Point[] via_points*: the plan, i.e., the `via_points` to reach the `target` given the current position.
+			- ```Feedback```, *Point[] via_points*: the set of `via_points` computed so far.
+			
+- Message:
+	- ```Bool.msg```: published on the topic ```state/battery_low```, warn FSM when robot's battery low.
+___
+### Software architecture
 
 The software that implements the *FSM* is made of 4 states:
-- WaitForOntology;
-- Recharging;
-- Plan_To_Urgent;
-- Visit_Room.
+- **WaitForOntology**;
+- **Recharging**;
+- **Plan_To_Urgent**;
+- **Visit_Room**.
 
  <p align="center">
   <img src="https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/images/statemachine.jpg" width="600" />
