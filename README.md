@@ -65,7 +65,7 @@ ___
   - It should mainly stay on corridors;
   - If a reachable room has not been visited for some times it should visit it.
   
-  The policy I implemented for surveillance is based on randomness in order to make robot more random-based. In fact the node [my_helper](https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/scripts/my_helper.py) in the function ```DecideUrgentReachable()``` where it is obtained a list of room *reachable* and a list of room *urgent*, then by seeing if there are some of them that belongs to both lists. Then it picks a random item belonging to both lists.
+  The policy I implemented for surveillance is based on randomness in order to make robot more random-based. In fact the node [my_helper](https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/scripts/my_helper.py) in the function ```DecideUrgentReachable()``` obtains a list of room *reachable* and a list of room *urgent*, then by seeing if there are some of them that belongs to both lists it picks a random item belonging to both lists.
   
   ___
  ## Software architecture
