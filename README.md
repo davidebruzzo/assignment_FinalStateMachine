@@ -177,13 +177,13 @@ This node also communicates with ```planner``` and ```controller``` as described
 ### The ```planner``` node
 
 <p align="center">
-  <img src="https://github.com/mmatteo-hub/EXPROBLAB_Assignment1/blob/main/images/planner.jpg" width="600" />
+  <img src="https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/images/planner.png" width="600" />
   <p>
 	 
 ### The ```controller``` node
 	  
 <p align="center">
-  <img src="https://github.com/mmatteo-hub/EXPROBLAB_Assignment1/blob/main/images/controller.jpg" width="600" />
+  <img src="https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/images/controller.png" width="600" />
   <p>
 	  
 ### The ```battery``` node
