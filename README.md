@@ -159,5 +159,33 @@ ___
    It publishes a boolean value when the robot has *low battery*, it returns to FSM to recharge the robot. The other nodes are active aswell but they are based on    the interaction with FSM that makes them do something.
 
 ___  
-## Software components
+## Software architecture & components
 
+Here below the explanation node for node of the architecture of the software.
+	  
+### The ```Assignment_FSM``` node
+	
+<p align="center">
+  <img src="https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/images/Blank%20diagram.png" width="600" />
+  <p>
+	
+This node defines the Finite State Machine that implements the behaviour of the robot. Practically it supervises the transition between the states, the correct execution of the states by calling the correct functions implemented in the helper class called [my_helper.py](https://github.com/davidebruzzo/assignment_FiniteStateMachine/blob/main/scripts/my_helper.py).
+In each state it can communicates with *aRMOR server* for example to obtain urgent rooms or reachable locations, or booleans to check if a query asked to the ontology has been performed correctly. 
+
+This node also communicates with ```planner``` and ```controller``` as described in ```ROS messages and parameters``` section.
+	  
+### The ```planner``` node
+
+<p align="center">
+  <img src="https://github.com/mmatteo-hub/EXPROBLAB_Assignment1/blob/main/images/planner.jpg" width="600" />
+  <p>
+	 
+### The ```controller``` node
+	  
+<p align="center">
+  <img src="https://github.com/mmatteo-hub/EXPROBLAB_Assignment1/blob/main/images/controller.jpg" width="600" />
+  <p>
+	  
+### The ```battery``` node
+
+The ```battery``` node simulates the cycles of discharging and recharging of the battery. This node runs on a separate thread and sends the boolean value of battery low after a random amount of time.
