@@ -241,7 +241,7 @@ Before launching the .launch file, you need to have a folder (*topological_map*)
 ```python 
   path = '/root/ros_ws/src/topological_map/'
 ```
-And the file .owl *topological_map.owl* in this directory, in order to make possible to perform this instruction:
+And the file .owl *topological_map.owl* in this directory, in order to make possible to perform this instruction, which is automathically done by ```LoadOntology()``` function:
 
 ```python 
   # Initializing with buffered manipulation and reasoning
