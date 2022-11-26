@@ -236,6 +236,18 @@ Then it's also needed the ```xterm``` package, by typing this in shell:
   sudo apt-get update
   sudo apt-get -y install xterm
 ```
+Before launching the .launch file, you need to have a folder (*topological_map*) in your ros workspace to retreive this path variable:
+
+```python 
+  path = '/root/ros_ws/src/topological_map/'
+```
+And the file .owl *topological_map.owl* in this directory, in order to make possible to perform this instruction:
+
+```python 
+  # Initializing with buffered manipulation and reasoning
+  client.utils.load_ref_from_file(path + "topological_map.owl", "http://bnc/exp-rob-lab/2022-23", True, "PELLET", True, False)
+```
+
 Now you can use the following commands to launch the simulation:
   - On a terminal:
     ```bash 
